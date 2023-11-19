@@ -3,18 +3,20 @@
 
 version: 2
 updates:
-  # Enable version updates for npm
+  # Enable version updates for javascript
   - package-ecosystem: "javascript"
-    # Look for `package.json` and `lock` files in the `root` directory
     directory: "/"
-    # Check the npm registry for updates every day (weekdays)
+    schedule:
+      interval: "weekly"
+
+  # Enable version updates for Python
+  - package-ecosystem: "python"
+    directory: "/"
     schedule:
       interval: "weekly"
 
   # Enable version updates for Docker
-  - package-ecosystem: "python"
-    # Look for a `Dockerfile` in the `root` directory
+  - package-ecosystem: "docker"
     directory: "/"
-    # Check for updates once a week
     schedule:
       interval: "weekly"
